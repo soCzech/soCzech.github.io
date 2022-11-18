@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<title>Multi-Task Learning of Object State Changes from Uncurated Videos</title>
+<meta property="og:title" content="Multi-Task Learning of Object State Changes from Uncurated Videos" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://soczech.github.io/multi-task-object-states/" />
+<meta property="og:url" content="https://soczech.github.io/multi-task-object-states/" />
+<meta property="og:site_name" content="Multi-Task Learning of Object State Changes from Uncurated Videos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Multi-Task Learning of Object State Changes from Uncurated Videos" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Multi-Task Learning of Object State Changes from Uncurated Videos</h1>
+      <h2 class="project-tagline"><a href="https://scholar.google.com/citations?user=sJdrqpUAAAAJ">Tomáš Souček</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=_VmflIEAAAAJ">Jean-Baptiste Alayrac</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=9tfacCoAAAAJ">Antoine Miech</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=-9ifK0cAAAAJ">Ivan Laptev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=NCtKHnQAAAAJ">Josef Sivic</a></h2>
+        <a href="#TODO" class="btn">Paper</a>
+        <a href="https://github.com/soCzech/MultiTaskObjectStates" class="btn">Code</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+
+<p><img src="/assets/img/MultiTaskObjectStates.svg" alt="Model overview" /></p>
+
+<h1 id="abstract">Abstract</h1>
+
+<p>We aim to learn to temporally localize object state changes and the corresponding state-modifying actions by observing people interacting with objects in long uncurated web videos.
+We introduce three principal contributions. First, we explore alternative multi-task network architectures and identify a model that enables efficient joint learning of multiple object states and actions such as <em>pouring water</em> and <em>pouring coffee</em>. Second, we design a multi-task self-supervised learning procedure that exploits different types of constraints between objects and state-modifying actions enabling end-to-end training of a model for temporal localization of object states and actions in videos from only noisy video-level supervision.
+Third, we report results on the large-scale ChangeIt and COIN datasets containing tens of thousands of long (un)curated web videos depicting various interactions such as <em>hole drilling</em>, <em>cream whisking</em>, or <em>paper plane folding</em>. We show that our multi-task model achieves a relative improvement of 40% over the prior single-task methods and significantly outperforms both image-based and video-based zero-shot models for this problem. We also test our method on long egocentric videos of the EPIC-KITCHENS and the Ego4D datasets in a zero-shot setup demonstrating the robustness of our learned model.</p>
+
+<hr />
+
+<h1 id="example-model-predictions">Example Model Predictions</h1>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/RnJNkKnBKEs" width="700" height="480" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<hr />
+
+<h1 id="citation">Citation</h1>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">soucek2022multitask</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">=</span><span class="s">{Multi-Task Learning of Object State Changes from Uncurated Videos}</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">=</span><span class="s">{Sou\v{c}ek, Tom\'{a}\v{s} and Alayrac, Jean-Baptiste and Miech, Antoine and Laptev, Ivan and Sivic, Josef}</span><span class="p">,</span>
+    <span class="na">month</span> <span class="p">=</span> <span class="s">{November}</span><span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p>This work was partly supported by the European Regional Development Fund under the project IMPACT (reg. no. CZ.02.1.01/0.0/0.0/15_003/0000468), the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90140), the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR19-P3IA-0001 (PRAIRIE 3IA Institute), and Louis Vuitton ENS Chair on Artificial Intelligence.</p>
+
+<p>The ordering constraint code has been adapted from the CVPR 2022 paper <a href="https://arxiv.org/abs/2203.11637">Look for the Change: Learning Object States and State-Modifying Actions from Untrimmed Web Videos</a> available on <a href="https://github.com/soCzech/LookForTheChange">github.com</a>.</p>
+
+
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
+
+
+
+
