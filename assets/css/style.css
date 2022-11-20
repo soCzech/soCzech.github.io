@@ -285,7 +285,7 @@ a:hover { text-decoration: underline; }
 
 .project-name { margin-top: 0; margin-bottom: 0.1rem; }
 
-@media screen and (min-width: 64em) { .project-name { font-size: 3.25rem; } }
+@media screen and (min-width: 64em) { .project-name { font-size: 3rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) { .project-name { font-size: 2.25rem; } }
 
@@ -367,14 +367,20 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
-h2.project-tagline a { color: #fff; }
+h2 a { color: #fff; }
+
+h2.conference { font-size: 1.75rem; font-weight: bold; }
 
 p { text-align: justify; }
 
-img { width: 100%; }
+.overview-image { width: 100%; }
+
+.split-image { width: 50%; padding: 0 2%; }
 
 .video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
 
 .video iframe, .video object, .video embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.warning { padding: 15px; border-radius: 15px; background: rgb(255 240 240); border: 2px solid rgb(255 70 70); margin-bottom: 2em!important; font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */
