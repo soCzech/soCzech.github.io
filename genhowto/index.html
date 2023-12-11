@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<title>GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos</title>
+<meta property="og:title" content="GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://soczech.github.io/genhowto/" />
+<meta property="og:url" content="https://soczech.github.io/genhowto/" />
+<meta property="og:site_name" content="GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#002d56">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos</h1>
+      <h2 class="project-tagline"><a href="https://scholar.google.com/citations?user=sJdrqpUAAAAJ">Tomáš&nbsp;Souček</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://dimadamen.github.io/">Dima&nbsp;Damen</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://mwray.github.io/">Michael&nbsp;Wray</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=-9ifK0cAAAAJ">Ivan&nbsp;Laptev</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=NCtKHnQAAAAJ">Josef&nbsp;Sivic</a></h2>
+        <a href="https://arxiv.org/abs/" class="btn">Paper</a>
+        <a href="https://github.com/soCzech/GenHowTo" class="btn">Code</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+
+<h3 style="text-align: center;margin: 0;">Generated actions</h3>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+	<source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-01.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+        <source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-02.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+        <source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-03.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+<div style="clear: both;padding-bottom:1em"></div>
+
+<h3 style="text-align: center;margin: 0;">Generated states</h3>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+        <source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-04.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+        <source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-05.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+<video width="33.3%" autoplay="" loop="" muted="" style="padding: 0 1.5%;float: left;">
+        <source src="https://data.ciirc.cvut.cz/public/projects/2023GenHowTo/interp-06.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+<div style="clear: both;padding-bottom:1em"></div>
+
+
+
+
+<h1 id="abstract">Abstract</h1>
+
+<p>We address the task of generating temporally consistent and physically plausible images of actions and object state transformations. Given an input image and a text prompt describing the targeted transformation, our generated images preserve the environment and transform objects in the initial image. Our contributions are threefold. First, we leverage a large body of instructional videos and automatically mine a dataset of triplets of consecutive frames corresponding to initial object states, actions, and resulting object transformations. Second, equipped with this data, we develop and train a conditioned diffusion model dubbed <b>GenHowTo</b>. Third, we evaluate <b>GenHowTo</b> on a variety of objects and actions and show superior performance compared to existing methods. In particular, we introduce a quantitative evaluation where <b>GenHowTo</b> achieves 88% and 74% on seen and unseen interaction categories, respectively, outperforming prior work by a large margin.</p>
+
+<hr />
+
+<h1 id="abstract">Method overview</h1>
+
+<p><img class="overview-image" src="/assets/img/GenHowTo.svg" alt="GenHowTo example outputs" /></p>
+<p>Given an image of an initial scene (<span style="color:red">red</span>) and text prompts (<b>bold</b>), <b>GenHowTo</b> generates images corresponding to the action (<span style="color:cyan">blue</span>) and the final state when action is completed (<span style="color:yellow">yellow</span>). <b>GenHowTo</b> is learned from instructional videos and can generate new images of both seen and previously unseen object transformations. Importantly, <b>GenHowTo</b> learns to maintain the parts of the scene that showcase the action carried out in the same environment, in the spirit of HowTo examples, while introducing important objects (e.g., hand and knife in the first example) and transforming the object according to the prompt.</p>
+
+<hr />
+
+
+<h1 id="citation">Citation</h1>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">soucek2023genhowto</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">=</span><span class="s">{GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos}</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">=</span><span class="s">{Sou\v{c}ek, Tom\'{a}\v{s} and Damen, Dima and Wray, Michael and Laptev, Ivan and Sivic, Josef}</span><span class="p">,</span>
+    <span class="na">month</span> <span class="p">=</span> <span class="s">{December}</span><span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p>This work was partly supported by the EU Horizon Europe Programme under the project EXA4MIND (No. 101092944) and the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90140). Part of this work was done within the University of Bristol’s Machine Learning and Computer Vision (MaVi) Summer Research Program 2023. Research at the University of Bristol is supported by EPSRC UMPIRE (EP/T004991/1) and EPSRC PG Visual AI (EP/T028572/1).</p>
+
+
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
+
+
+
+
