@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<title>ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions</title>
+<meta property="og:title" content="ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://soczech.github.io/showhowto/" />
+<meta property="og:url" content="https://soczech.github.io/showhowto/" />
+<meta property="og:site_name" content="ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#002d56">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions</h1>
+      <!--<h2 class="conference"></h2>-->
+      <h2 class="project-tagline"><a href="soczech.github.io">Tomáš&nbsp;Souček</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://prajwalgatti.github.io/">Prajwal&nbsp;Gatti</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://mwray.github.io/">Michael&nbsp;Wray</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=-9ifK0cAAAAJ">Ivan&nbsp;Laptev</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://dimadamen.github.io/">Dima&nbsp;Damen</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=NCtKHnQAAAAJ">Josef&nbsp;Sivic</a></h2>
+        <a href="#TODO" class="btn">Paper</a>
+        <a href="https://github.com/soCzech/showhowto" class="btn">Code</a>
+        <a href="https://data.ciirc.cvut.cz/public/projects/2024ShowHowTo/weights" class="btn">Trained models</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+
+<p><img class="overview-image" src="/assets/img/showhowto-teaser.svg" alt="Paper teaser" /></p>
+
+<h1 id="abstract">Abstract</h1>
+
+<p>The goal of this work is to generate step-by-step visual instructions in the form of a sequence of images, given an input image that provides the scene context and the sequence of textual instructions. This is a challenging problem as it requires generating multi-step image sequences to achieve a complex goal while being grounded in a specific environment. Part of the challenge stems from the lack of large-scale training data for this problem. The contribution of this work is thus three-fold. First, we introduce an automatic approach for collecting large step-by-step visual instruction training data from instructional videos. We apply this approach to one million videos and create a large-scale, high-quality dataset of 0.6M sequences of image-text pairs. Second, we develop and train ShowHowTo, a video diffusion model capable of generating step-by-step visual instructions consistent with the provided input image. Third, we evaluate the generated image sequences across three dimensions of accuracy (step, scene, and task) and show our model achieves state-of-the-art results on all of them. Our code, dataset, and trained models are publicly available.</p>
+
+<hr />
+
+<h1 id="abstract">Example Model Generations</h1>
+
+<p><img class="overview-image" src="/assets/img/showhowto-examples.svg" alt="ShowHowTo example outputs" /></p>
+<p><b>Qualitative results of our method for sequences from the test set.</b> Given the input image (left) and the textual instructions (top), <b>ShowHowTo</b> generates step-by-step visual instructions while maintaining objects from the input image (e.g., the cooking pot and the ceramic bowl in rows one and four) as well as among generated images (e.g., glass bowl in the second row).</p>
+
+<hr />
+
+
+<h1 id="citation">Citation</h1>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">soucek2024showhowto</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">=</span><span class="s">{ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions}</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">=</span><span class="s">{Sou\v{c}ek, Tom\'{a}\v{s} and Gatti, Prajwal and Wray, Michael and Laptev, Ivan and Damen, Dima and Sivic, Josef}</span><span class="p">,</span>
+    <span class="na">year</span><span class="p">=</span><span class="s">{2024}</span>
+    <span class="na">month</span><span class="p">=</span><span class="s">{December}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p>We acknowledge VSB – Technical University of Ostrava, IT4Innovations National Supercomputing Center, Czech Republic, for awarding this project access to the LUMI supercomputer, owned by the EuroHPC Joint Undertaking, hosted by CSC (Finland) and the LUMI consortium through the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (grant ID: 90254). Research at the University of Bristol is supported by EPSRC UMPIRE (EP/T004991/1) and EPSRC PG Visual AI (EP/T028572/1). Prajwal Gatti is partially funded by an uncharitable donation from Adobe Research to the University of Bristol. This research was co-funded by the European Union (ERC FRONTIER, No. 101097822 and ELIAS No. 101120237) and received the support of the EXA4MIND project, funded by the European Union’s Horizon Europe Research and Innovation Programme, under Grant Agreement N° 101092944. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Commission. Neither the European Union nor the granting authority can be held responsible for them.</p>
+
+
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
+
+
+
+
